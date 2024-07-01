@@ -1,0 +1,8 @@
+6) Pase los siguientes esquemas de relaciones a DER que lo represente fielmente.
+
+AEROPUERTO (nombre-aeropuerto, ciudad)
+VUELO (nro_vuelo, día_hora_salida, aeropuerto_origen, aeropuerto_destino)
+ESCALA (nro_vuelo, aerop_desde, aerop_hasta)
+
+Hecho en Miro: https://miro.com/app/board/uXjVK24bef4=/?share_link_id=902531714377
+https://miro.com/app/board/uXjVK24bef4=/
