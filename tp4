@@ -1,10 +1,17 @@
 Una agencia de viajes necesita adoptar un sistema que le permita disponer de la siguiente información :
 
-a.	Por cada cliente desea saber el código de cliente, nombre, dirección, teléfono, ocupación    y datos del grupo familiar.
-b.	Por cada Tours organizado por la empresa debe saber código de Tours, fecha y hora de salida fecha y hora de llegada, canti¬dad de plazas, nombre de la guía de turismo y las escalas que va realizando el Tours con hora y día de llegada y tiempo de esta¬día.
+a.	Por cada cliente desea saber el código de cliente, nombre, dirección, teléfono, ocupación y datos del grupo familiar.
+b.	Por cada Tours organizado por la empresa debe saber código de Tours, fecha y hora de salida fecha y hora de llegada, 
+        canti¬dad de plazas, nombre de la guía de turismo y las escalas que va realizando el Tours con hora y día de llegada y tiempo de esta¬día.
 c.	La Empresa tiene contratada gente especializada en cada escala que acompaña a los Tours que pasa en su zona.
-d.	El importe de cada Tours se puede pagar de varias formas.  Se debe registrar las cuotas pagas de cada cliente que corresponda a esta modalidad de pago.
-e.	El sueldo de los guías de turismo se deduce de un sueldo básico de acuerdo al cargo, más un importe por antigüedad, más un adicional por cada Tours que atendió.
+d.	El importe de cada Tours se puede pagar de varias formas.  Se debe registrar las cuotas pagas de cada cliente que 
+        corresponda a esta modalidad de pago.
+e.	El sueldo de los guías de turismo se deduce de un sueldo básico de acuerdo al cargo, más un importe por antigüedad, 
+        más un adicional por cada Tours que atendió.
 
 	Se pide :
 	  Hacer el DER indicando para cada entidad su identifica¬dor único y atributos. 
+
+
+Hecho en Miro: https://miro.com/welcomeonboard/bFZMQWg4NGx3bWxkeGcyQWczZUdyODFHNEhZQ01ZMm5SMXJ2NllEdGhRSHlWT3planBTaFc3YkNhckRneDYzTXwzNDU4NzY0NTkzNjQwNzIzNTkxfDI=?share_link_id=409862526529 
+https://miro.com/app/board/uXjVK276o5s=/
