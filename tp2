@@ -1,0 +1,75 @@
+a)	 Defina los siguientes términos : DER, Entidad, Interrelación (relationship), Conjunto de interrelaciones, Grado de una interrelación, 
+     Atributos , Identificador único, Evento. 
+b)	SQL
+      i.	Para que sirve el SQL?
+      ii.	En que etapa del ciclo de vida de un proyecto informático se utiliza el modelado con el SQL ?
+      iii.	Qué relación debe existir entre un SQL y un DBM ?
+
+A) 
+
+¿Qué es el DER? Es un diagrama Entidad-Relaciones donde nos muestra las entidades y cómo se relacionan entre sí, qué atributos tienen, 
+entre otras cosas. Es una representación gráfica donde nos permite visualizar fácilmente y de manera temprana cómo van a ser los pilares 
+de nuestra base de datos. Estamos viendo la estructura lógica de la base de datos y cómo será la implementación a futuro. 
+
+
+¿Qué es una Entidad? Las entidades representan objetos o conceptos del mundo real que tienen existencia propia en la base de datos. Cada entidad
+tiene sus propios atributo o características, y se pueden conectar con otras entidades a partir de las relaciones. En un diagrama DER se 
+las gráfica en forma de rectángulos. 
+
+¿Qué es una Interrelación? Una interrelación es la conexión que puede haber entre dos o más entidades. En el DER las podemos visualizar como
+flechas entre diferentes rectangulos (las entidades), y de esta manera podemos notar como es la relación entre ellas o cuál es el contexto en
+el que se comunican. Dentro de una relación podemos identificar a un componente importante como la cardinalidad, que nos dice el número 
+ de ejemplares de una entidad que pueden estar interrelacionados con un ejemplar de otra entidad (1:N , N:M , N:1, etc)
+
+¿Qué es un Conjunto de Interrelaciones? Es una serie de interrelaciones de un mismo tipo que se usan para conectar a las mismas entidades. 
+Nos ayudan a modelar y entender el motivo de las interacciones entre entidades.
+
+¿Qué es el Grado de una Interrelación? El grado de una interrelación es el número de entidades que participan en la relación. Nos da la posibilidad 
+de ver que tan compleja es la interacción dentro de la base de datos. Pueden ser Binarias (involucra 2 entidades), Ternaria (3 entidades) 
+o N-aria (incluye N entidades).
+
+¿Qué es un Atributo? Son las propiedades o características que puede tener una entidad. Cada atributo tiene un valor y un tipo específico  
+dentro de nuestra tabla y muchas veces estos atributos funcionan como claves para hacer un join entre diferentes entidades. 
+
+¿Qué es un Identificador Único? Cada entidad tiene un identificador, atributo o conjunto de atributos que la logren identificar del resto. 
+Por lo general utilizamos identificadores del carácter 'user_id' donde nos pemite identificar a una única persona y luego nos va a servir 
+para hacer joins entre diferentes tablas. 
+
+¿Qué es un Evento? Un evento es una acción que ocurre dentro de nuestra base de datos. Los eventos pueden ser agregar, actualizar o eliminar ciertos datos. 
+Muchos eventos los podemos codear de forma anticipada y de esta manera lograr que ciertas acciones ocurran de forma automática luego de 
+otra evento, a esto se le llama Triggers. 
+
+
+B) 
+
+i.	Para que sirve el SQL?
+
+Tener conocimientos de SQL y saber cómo utilizarlo puede ser beneficioso para indefinidos casos dentro de lo que es la manipulación de base de
+datos. Por ejemplo, dentro de sql podemos crear diferentes tablas que funcionen como estructura 
+entorno a una problemática en particular. Y luego con las herramientas de DDL y DML podemos modificar o consultar ciertas cosas de los datos 
+que forman esas tablas. Si nos ponemos a pensar en una app, el uso de sql 
+nos permite detectar y entender cómo las diferentes bases de datos interactúan entre sí para poder brindar un buen servicio al usuario. 
+Estos son algunos ejemplos que se me fueron ocurriendo de las muchas cosas que podemos hacer con sql. 
+
+
+ii.	En que etapa del ciclo de vida de un proyecto informático se utiliza el modelado con el SQL?
+
+El modelado en sql lo podemos utilizar en diferentes etapas tales como en la fase conceptual y lógica, la fase física, en la implementación y en el 
+mantenimiento del proyecto. 
+Aunque también se pueda llegar a utilizar en la fase de Recopilación de Requerimientos, va a ser de forma secundaria ya que estos requerimientos y condiciones 
+van a servir cómo bases para la luego crear nuestra base de dato. Una vez que ya definimos los requisitos pasamos a crear el diagrama DER 
+para tener un panomara visual de lo que será nuestro proyecto (Fase Conceptual y Lógica). Luego ya estrictamente en SQL y junto con los 
+diagramas vamos a poder definir los métodos, características, crear nuestra base de datos e Implementarla. Y por último el mantenimiento de esa base de datos
+es fundamental para evitar errores de actualización erróneos u otros problemas que pongan en riesgo el proyecto. 
+
+
+iii.	Qué relación debe existir entre un SQL y un DBM ?
+
+Un DBM (Database Management) es un software que gestiona y controla todos aquellos accesos a la base de datos. Cuando usamos SQL, estamos definiendo las 
+estructuras de la base de datos, como tablas y relaciones, así como las operaciones que queremos realizarsobre los datos datos. Y luego el DBM 
+se encarga de interpretar estos comandos SQL, ejecutarlos y gestionar los datos en la base de datos de manera eficiente y segura. Se podría decir
+que el DBMS es el nexo entre los comando sde SQL y la base de datos. 
+
+
+
+
