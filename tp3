@@ -1,0 +1,28 @@
+3) Proyecto Video Club: 
+
+Discutir acerca de los procesos y necesidades de datos de un sistema para un VIDEOCLUB: Alquiler, Reserva, Compra de Nuevas Peliculas, Devolución.
+        1.	Seleccionar una herramienta para su documentación
+        2.	Realizar el Diagrama Entidad Relación
+        3.	Realizar el DDD
+
+
+## Discusión y Notas antes de comenzar a codear: 
+
+/*
+A partir del caso creado puedo identificar 5 tablas que serían los pilares de nuestra base de datos. Estas serían Usuarios, Películas, 
+Alquileres, Reserva y Compras. En mi caso en particular voy a decidir que mi videoclub tiene por cada película como máximo 2 
+unidades para alquilar. Y el cliente solo puede alquilar como máximo 2 películas a la vez. De esta forma va a haber una relación 
+donde un mismo cliente solo pueda tener 2 películas como máximo para alquilar (1:2). Al mismo tiempo el cliente va a poder reservar una 
+película cuando esta misma esté siendo alquilada por otro usuario y de esta forma quedará “en la cola” hasta que esté disponible. 
+Y el inventario de películas debe aumentar en el momento en que el videoclub compre nuevas películas. Todas estas tablas van a estar
+relacionadas entre sí, voy a tener que generar un id para cada cliente, cada película, cada gestión de alquiler o reserva o compra de 
+la misma, para cada transacción y seguramente deba dejar estipulada la fecha en la cual un cliente adquiere una película y hasta cuando 
+tiene tiempo de devolverla.
+*/
+
+1- Mi documentación lo voy a hacer tanto en github como tambien en docuentos de google para poder trabajar en simultáneo con mis compañeros. 
+Luego el DER lo voy a hacer con Miro. Y las operaciones en sí las haré en MySQL Workbench. 
+
+
+2-  https://miro.com/app/board/uXjVK21VxdE=/   
+https://miro.com/welcomeonboard/TUdMTlFnOTdEbjFvd1VBWmU4U1NWZXZ6MTd4OUF1dTIwTm8zZThwcEZwMUJENkpXM25SZEVnMVVHZWwxMmlLbXwzNDU4NzY0NTkzNjQwNzIzNTkxfDI=?share_link_id=285253811889
