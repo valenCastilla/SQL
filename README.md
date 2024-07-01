@@ -175,6 +175,15 @@ a.	Verificar que esté correctamente instalado, o instalarlo.
 
 
 
+------------------     TP 11     ------------------
+
+11)	Escribir para el TP 4, un SP, una Function y 2 Trigger. Implementarlo y mostrar su funcionamiento.
+
+
+------------------     TP 12     ------------------
+
+12)	Escribir para el TP 5, un SP, una Function y 2 Trigger. Implementarlo y mostrar su funcionamiento.
+
 
 
 
