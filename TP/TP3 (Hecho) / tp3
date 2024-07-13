@@ -9,7 +9,7 @@ Discutir acerca de los procesos y necesidades de datos de un sistema para un VID
 ## Discusión y Notas antes de comenzar a codear: 
 
 /*
-A partir del caso creado puedo identificar 5 tablas que serían los pilares de nuestra base de datos. Estas serían Usuarios, Películas, 
+A partir del caso creado puedo identificar 5 tablas que serían los pilares de nuestra base de datos. Estas serían Clientes, Películas, 
 Alquileres, Reserva y Compras. En mi caso en particular voy a decidir que mi videoclub tiene por cada película como máximo 2 
 unidades para alquilar. Y el cliente solo puede alquilar como máximo 2 películas a la vez. De esta forma va a haber una relación 
 donde un mismo cliente solo pueda tener 2 películas como máximo para alquilar (1:2). Al mismo tiempo el cliente va a poder reservar una 
@@ -26,3 +26,57 @@ Luego el DER lo voy a hacer con Miro. Y las operaciones en sí las haré en MySQ
 
 2-  https://miro.com/app/board/uXjVK21VxdE=/   
 https://miro.com/welcomeonboard/TUdMTlFnOTdEbjFvd1VBWmU4U1NWZXZ6MTd4OUF1dTIwTm8zZThwcEZwMUJENkpXM25SZEVnMVVHZWwxMmlLbXwzNDU4NzY0NTkzNjQwNzIzNTkxfDI=?share_link_id=285253811889
+
+3- Realizar el DDD 
+
+Tenemos 5 tablas que son: Usuarios, Películas, Alquileres, Reserva y Compras.
+
+
+CREATE TABLE Clientes (
+    cliente_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(20),
+    apellido VARCHAR(20),
+    dni INT UNIQUE,
+    telefono INT, 
+    direccion VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+);
+
+CREATE TABLE peliculas (
+    pelicula_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    titulo VARCHAR(200) NOT NULL,
+    director VARCHAR(50),
+    año INT NOT NULL,
+    genero VARCHAR(50) NOT NULL,
+    cant_disponible INT DEFAULT 2 NOT NULL, 
+    estado VARCHAR(50) NOT NULL  
+);
+
+CREATE TABLE reservas (
+    reserva_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    cliente_id INT NOT NULL,
+    pelicula_id INT NOT NULL,
+    fecha_reserva DATE NOT NULL,
+    fecha_expiracion DATE NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(cliente_id),
+    FOREIGN KEY (pelicula_id) REFERENCES peliculas(pelicula_id),
+);
+
+
+CREATE TABLE alquileres (
+    alquiler_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    cliente_id INT NOT NULL,
+    pelicula_id INT NOT NULL,
+    fecha_alquiler DATE NOT NULL,
+    fecha_expiracion DATE NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(cliente_id),
+    FOREIGN KEY (pelicula_id) REFERENCES peliculas(pelicula_id),
+);
+
+CREATE TABLE compras (
+    compra_id  NOT NULL INT PRIMARY KEY AUTO_INCREMENT,
+    pelicula_id INT NOT NULL,
+    cantidad INT NOT NULL,
+    fecha_compra DATE NOT NULL,
+    FOREIGN KEY (pelicula_id) REFERENCES peliculas(pelicula_id)
+);
