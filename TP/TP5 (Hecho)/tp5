@@ -1,5 +1,6 @@
 5)	Sistema de administración de aeropuertos
 
+
 Se quiere modelizar un sistema para la administración de aeropuertos. Se sabe que un aeropuerto trabaja con distintas líneas aéreas 
 (Ej.: Aerolíneas Argentinas, Iberia, Air France, etc.) y una misma línea aérea trabaja en uno o varios aeropuertos.
 
@@ -35,7 +36,7 @@ Instrucciones:
 3.	Seleccionar una herramienta CASE
 4.	Elaborar el DER
 
-
+1 y 2) ### (El subrayado y resaltado está hecho en el Documentos de Google)
 
 3) Seleccionar una herramienta CASE: 
 Una herramienta de CASE (Computer-Aided Software Engineering) son diferentes software que voy a utilizar en la diferentes etapas de un proyecto
