@@ -1,0 +1,108 @@
+CREATE DATABASE agencia;
+
+USE agencia; 
+
+CREATE TABLE cliente (
+    cliente_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(20),
+    apellido VARCHAR(20),
+    direccion VARCHAR(100),
+    telefono INT, 
+    ocupacion VARCHAR(100),
+    datos_familia VARCHAR(100)
+); 
+
+CREATE TABLE paquete (
+    paquete_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    tour_id INT,
+    precio INT 
+    /* CONSTRAINT FOREIGN KEY (tour_id)	REFERENCES cliente(tour_id) */
+);
+
+
+CREATE TABLE cliente_paq (
+    pago_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    paquete_id INT,
+    cliente_id INT,
+    precio INT,
+    fecha_pago DATETIME, 
+    modalidad VARCHAR(20), 
+    cant_cuotas INT,
+    cuotas_pagas INT
+    /* CONSTRAINT FOREIGN KEY (paquete_id)	REFERENCES paquete(paquete_id) */
+    /* CONSTRAINT FOREIGN KEY (cliente_id)	REFERENCES cliente(cliente_id) */
+);
+
+
+CREATE TABLE tour (
+    tour_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    salida_datetime DATETIME,
+    llegada_datetime DATETIME,
+    cant_plazas INT,
+    nombre_guia VARCHAR(50),
+    cant_escalas INT,
+    escala1_id INT,
+    escala2_id INT,
+    escala3_id INT
+	/* CONSTRAINT FOREIGN KEY (nombre_guia)	REFERENCES guia(nombre_guia) */
+);
+
+
+CREATE TABLE tour_coord (
+    tour_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    coord_id INT,
+    nombre_coord VARCHAR(50)
+	/* CONSTRAINT FOREIGN KEY (coord_id) REFERENCES coordinador(coord_id) */
+	/* CONSTRAINT FOREIGN KEY (nombre_coord) REFERENCES coordinador(nombre_coord) */
+);
+
+CREATE TABLE coordinador (
+    coord_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre_coord VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    direccion VARCHAR(50),
+    telefono INT
+);
+
+
+CREATE TABLE escala (
+    escala_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    salida_escala_date DATETIME,
+    llegada_escala_date DATETIME,
+    tiempo_estadia INT,
+    cant_plazas INT
+);
+
+
+CREATE TABLE escala_guia (
+    escala_id INT,
+    guia_id INT,
+    nombre_guia VARCHAR(50)
+	/* CONSTRAINT FOREIGN KEY (guia_id) REFERENCES guia(guia_id) */
+);
+
+
+CREATE TABLE guia (
+    guia_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre_guia VARCHAR(50),
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    direccion VARCHAR(50),
+    antiguedad INT,
+    sueldo_basico INT    
+);
+
+
+CREATE TABLE sueldo_guia (
+    guia_id INT ,
+    nombre_guia VARCHAR(50),
+    cargo_guia VARCHAR(50),
+    sueldo_basico INT, 
+    sueldo_antiguedad INT, 
+    cant_tours INT, 
+    sueldo_tours INT,
+    sueldo_total INT
+	/* CONSTRAINT FOREIGN KEY (guia_id) REFERENCES guia(guia_id) */
+
+);
