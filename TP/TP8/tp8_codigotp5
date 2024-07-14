@@ -1,0 +1,94 @@
+CREATE DATABASE aeropuerto; 
+
+USE aeropuerto; 
+
+CREATE TABLE aeropuerto(
+    aerop_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(50),
+    ubicacion VARCHAR(50)
+);
+
+CREATE TABLE pista_atterizaje(
+    pista_aterri_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    aerop_id INT NOT NULL,
+    CONSTRAINT FOREIGN KEY (aerop_id) REFERENCES aeropuerto(aerop_id)
+);
+
+CREATE TABLE pista_despegue(
+    pista_desp_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    aerop_id INT NOT NULL,
+    CONSTRAINT FOREIGN KEY (aerop_id) REFERENCES aeropuerto(aerop_id)
+);
+
+CREATE TABLE aerolinea(
+    linea_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE check_in(
+    checkin_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    lugar VARCHAR(50),
+    numero INT,
+    ubicacion VARCHAR(50),
+    tipo VARCHAR(50), /* tipo: turista - primera clase - business */
+    aerop_id INT NOT NULL,  
+    linea_id INT NOT NULL,
+    CONSTRAINT FOREIGN KEY (aerop_id) REFERENCES aeropuerto(aerop_id),
+    CONSTRAINT FOREIGN KEY (linea_id) REFERENCES aerolinea(linea_id)
+);
+
+CREATE TABLE avion(
+    avion_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    linea_id INT NOT NULL,
+    tipo VARCHAR(50), /* tipo: avioneta - medianos - boeing */ 
+    cant_asientos INT,
+    CONSTRAINT FOREIGN KEY (linea_id) REFERENCES aerolinea(linea_id)
+);
+
+CREATE TABLE vuelo(
+    vuelo_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    avion_id INT NOT NULL,
+    tipo VARCHAR(50), /* tipo: charter - de linea */ 
+    ciudad_origen VARCHAR(50), 
+    salida_datetime DATETIME, 
+    ciudad_destino VARCHAR(50), 
+    llegada_datetime DATETIME, 
+    duracion INT,
+    CONSTRAINT FOREIGN KEY (avion_id) REFERENCES avion(avion_id)
+);
+
+CREATE TABLE persona (
+    persona_dni INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50)
+);
+
+CREATE TABLE reserva_act(
+    reserva_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    persona_dni INT NOT NULL, 
+    vuelo_id INT NOT NULL, 
+    venc_reserva_datetime DATETIME,
+    CONSTRAINT FOREIGN KEY (persona_dni) REFERENCES persona(persona_dni),
+    CONSTRAINT FOREIGN KEY (vuelo_id) REFERENCES vuelo(vuelo_id)
+);
+
+CREATE TABLE reserva_venc(
+    reserva_id INT,
+    persona_dni INT, 
+    vuelo_id INT, 
+    venc_reserva_datetime DATETIME,
+    CONSTRAINT FOREIGN KEY (reserva_id) REFERENCES reserva_act(reserva_id),
+    CONSTRAINT FOREIGN KEY (persona_dni) REFERENCES persona(persona_dni),
+    CONSTRAINT FOREIGN KEY (vuelo_id) REFERENCES vuelo(vuelo_id)
+);
+
+CREATE TABLE pasajero(
+    persona_dni INT NOT NULL, 
+    reserva_id INT NOT NULL, 
+    vuelo_id INT NOT NULL, 
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    CONSTRAINT FOREIGN KEY (persona_dni) REFERENCES persona(persona_dni),
+    CONSTRAINT FOREIGN KEY (reserva_id) REFERENCES reserva_act(reserva_id),
+    CONSTRAINT FOREIGN KEY (vuelo_id) REFERENCES vuelo(vuelo_id)
+);
