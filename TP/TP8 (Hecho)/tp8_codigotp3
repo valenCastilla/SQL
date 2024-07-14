@@ -6,7 +6,7 @@ CREATE TABLE Clientes (
     dni INT UNIQUE,
     telefono INT, 
     direccion VARCHAR(100),
-    email VARCHAR(100) UNIQUE,
+    email VARCHAR(100) UNIQUE
 );
 
 CREATE TABLE peliculas (
@@ -25,10 +25,9 @@ CREATE TABLE reservas (
     pelicula_id INT NOT NULL,
     fecha_reserva DATE NOT NULL,
     fecha_expiracion DATE NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(cliente_id),
+    FOREIGN KEY (cliente_id) REFERENCES Clientes(cliente_id),
     FOREIGN KEY (pelicula_id) REFERENCES peliculas(pelicula_id)
 );
-
 
 CREATE TABLE alquileres (
     alquiler_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -36,14 +35,13 @@ CREATE TABLE alquileres (
     pelicula_id INT NOT NULL,
     fecha_alquiler DATE NOT NULL,
     fecha_expiracion DATE NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(cliente_id),
+    FOREIGN KEY (cliente_id) REFERENCES Clientes(cliente_id),
     FOREIGN KEY (pelicula_id) REFERENCES peliculas(pelicula_id)
 );
 
 CREATE TABLE compras (
-    compra_id  INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    compra_id  INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     pelicula_id INT NOT NULL,
     cantidad INT NOT NULL,
     fecha_compra DATE NOT NULL,
-    FOREIGN KEY (pelicula_id) REFERENCES peliculas(pelicula_id)
-);
+    FOREIGN KEY (pelicula_id) REFERENCES pelicu
