@@ -1,0 +1,12 @@
+9)	Escribir el código SQL que define las tablas del ejercicio práctico Nro. 5
+  a.	Escribir el código SQL que define las tablas normalizadas (DDL)
+  b.	Seleccionar los Vuelos de la Linea Aerolineas Argentina que despegaron en el mes de Marzo de 2011.
+  c.	Seleccionar las personas que volaron en Bussiness a Madrid.
+  d.	Informar la reserva de “Hugo López” para el mes que viene.
+  e.	Insertar en una tabla un registro completo. Imprimir una consulta previa (QUERY) en donde se evidencie que el registro no existía y luego la misma con ese registro. Incluir el código.
+  f.	Eliminar de una tabla un registro completo. Imprimir una consulta previa (QUERY) en donde se muestre el registro y luego la misma sin ese registro. Incluir el código.
+  g.	Hacer una consulta que indexe en otro orgen que no sea la clave primaria.
+  h.	Hacer una consulta que agrupe datos e indique cantidad de registros que cumplen la agrupación de datos, ordenando en orden descendente.
+  i.	Utilizar InnerJoin
+  j.	Utilizar OuterJoin
+  k.	Aplicar los conocimientos adquiridos de optimización de consultas
